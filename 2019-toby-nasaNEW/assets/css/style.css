@@ -29,6 +29,16 @@
     font-style: normal; */
 }
 
+@keyframes glowing {
+  0% { text-shadow: 0.5px 0.5px 4px white;
+       transform: skewX(0deg) scaleY(1); }
+
+
+
+  100% { text-shadow: 0.5px 0.5px 20px white;
+        transform: skewX(-1deg) scaleY(0.99); }
+}
+
 
 /* sol info */
 
@@ -41,15 +51,17 @@
   justify-content: left;
   /* grid-template-columns: auto auto auto; */
 
-  padding-top: 20vh;
-  padding-left: 38.5vw;
+  padding-top: 22vh;
+  padding-left: 39.5vw;
+
 
   font-family: nakadai;
   font-weight: bold;
-  text-shadow: 0.5px 0.5px 4px white;
+  /* text-shadow: 0.5px 0.5px 4px white; */
+  animation: glowing 3s infinite alternate linear;
 /*
   border-style: solid; */
-  height: 4vh;
+  height: 8vh;
   width: 100vw;
 }
 
@@ -98,10 +110,15 @@
   flex-direction: row;
 
   padding-left: 5vw;
-  padding-top: 5vh;
+  padding-top: 1vh;
+  padding-bottom: 5vh;
 
-  /* width: 100vw;
-  height: auto;  */
+
+
+
+
+  width: 100vw;
+  height: 30vh;
   }
 
   /* NEED TO NEST FLEX BOXES FOR ALL WEATHER ITEMS */
@@ -121,7 +138,8 @@
 /* temperature grid of values */
 .tempGrid{
   font-family: nakadai;
-  text-shadow: 0.5px 0.5px 5px white;
+  animation: glowing 4s infinite alternate linear;
+  /* text-shadow: 0.5px 0.5px 5px white; */
 
   display: flex;
   flex-direction: column;
@@ -129,7 +147,8 @@
 
 
   /* overflow: hidden; */
-  margin: 0vw;
+  /* margin: 0vw; */
+
 
 
 
@@ -163,7 +182,7 @@
   width: auto;
   height: 2vh;
 
-  font-size: 2.5vh;
+  font-size: 2vh;
 }
 
 /* value from API */
@@ -190,7 +209,7 @@
   padding-left: 5%;
   text-align: left;
 
-  font-size: 2.5vh;
+  font-size: 2vh;
 }
 
 /* average value */
