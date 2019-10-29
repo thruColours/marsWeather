@@ -8,7 +8,7 @@
 //   console.log(myJson[mostRecentSol]);
 // }
 
-const apiURL = "https://api.nasa.gov/insight_weather/?api_key=eHZbXQ8gCR7XYYzw3n7k93nWzsQdch5hpIg9oVD1&feedtype=json&ver=1.0"
+const apiURL = "https://api.nasa.gov/insight_weather/?api_key=eHZbXQ8gCR7XYYzw3n7k93nWzsQdch5hpIg9oVD1&feedtype=json&ver=1.0";
 
 
 var oReq = new XMLHttpRequest();
@@ -26,6 +26,7 @@ function marsAPI () {
   const mostRecentSol = myJSON['sol_keys'][6];
 
   //AT = atmospheric temperature (per-sol)
+  // var degr = "°C";
   const avTemp = myJSON[mostRecentSol]['AT']['av'];
   const minTemp = myJSON[mostRecentSol]['AT']['mn'];
   const maxTemp = myJSON[mostRecentSol]['AT']['mx'];
@@ -44,8 +45,17 @@ function marsAPI () {
   const seas0n = myJSON[mostRecentSol]['Season'];
 
 
+  //see if data is coming through
+  // console.log(myJSON[mostRecentSol]);
+  console.log(avTemp);
+  console.log(seas0n);
+
+
   //display Sol
   document.getElementById("day").innerHTML = todaySol;
+
+  //season
+  document.getElementById("Ceason").innerHTML = seas0n;
 
   //temp
   document.getElementById("minTemp").innerHTML = minTemp;
@@ -62,15 +72,8 @@ function marsAPI () {
   document.getElementById("avPre").innerHTML = avPre;
   document.getElementById("maxPre").innerHTML = maxPre;
 
-  //season
-  document.getElementById("Season").innerHTML = seas0n;
 
 
-  //see if data is coming through
-  // console.log(myJSON[mostRecentSol]);
-
-  console.log(avTemp);
-  console.log(seas0n);
 }
 
 
