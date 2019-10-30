@@ -16,14 +16,57 @@ oReq.addEventListener("load", marsAPI);
 oReq.open("GET", apiURL);
 oReq.send();
 
+
+
+// //from Gareth
+// function reqListener () {
+//   const myJson = JSON.parse(this.responseText);
+//   let amountOfSols = myJson['sol_keys'].length;
+//   if(amountOfSols == 0){
+//     console.log("No sols today.")
+//     return; // stop
+//   }
+//   // Always select the highest index (i.e. the most recent sol)
+//   const mostRecentSol = myJson['sol_keys'][amountOfSols-1];
+//   console.log(myJson[mostRecentSol]['HWS']['mx']);
+// }
+
+
+
+
+
+//this function returns select parts of the data and then displays them
 function marsAPI () {
+
+  // const myJSON = JSON.parse(this.responseText);
+
+
   const myJSON = JSON.parse(this.responseText);
 
-  //display Sol number
-  const todaySol = myJSON['sol_keys']['6'];
+  //find length of sol_keys
+  let amountOfSols = myJSON['sol_keys'].length;
 
+  // if(amountOfSols == 0){
+  //   console.log("No sols today.")
+  //   return; // stop
+  // }
+
+  //otherwise....
+  // Always select the highest index (i.e. the most recent sol)
+  //-1 as count begins from 0 so if 7 Sols, amountOfSols will select '6' as 7-1 = 6.
   //select Sol to take
-  const mostRecentSol = myJSON['sol_keys'][6];
+  const mostRecentSol = myJSON['sol_keys'][amountOfSols-1];
+
+
+  //display Sol number
+  //adjust this to respond to data feed
+  // const todaySol = myJSON['sol_keys']['5'];
+
+  //always choose latest Sol number to display
+  let solKeys = myJSON['sol_keys'];
+  const latestSol = solKeys[solKeys.length-1];
+  console.log(latestSol);
+
 
   //AT = atmospheric temperature (per-sol)
   // var degr = "°C";
@@ -49,10 +92,11 @@ function marsAPI () {
   // console.log(myJSON[mostRecentSol]);
   console.log(avTemp);
   console.log(seas0n);
+  console.log(myJSON[mostRecentSol]);
 
 
   //display Sol
-  document.getElementById("day").innerHTML = todaySol;
+  document.getElementById("day").innerHTML = latestSol;
 
   //season
   document.getElementById("Ceason").innerHTML = seas0n;
@@ -72,21 +116,4 @@ function marsAPI () {
   document.getElementById("avPre").innerHTML = avPre;
   document.getElementById("maxPre").innerHTML = maxPre;
 
-
-
 }
-
-
-
-
-
-
-
-
-// document.getElementById("day").innerHTML = todaySol;
-
-// $(document).ready(function() {
-//
-// $(".day .value").html("todaySol");
-//
-// });
