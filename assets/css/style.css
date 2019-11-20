@@ -19,7 +19,7 @@
 @font-face {
   font-family: nakadai;
   src: url('../fonts/nakadai.otf');
-  color: black;
+
 
 }
 
@@ -45,7 +45,7 @@
 /* sol info */
 
 .sol{
-  color: black;
+
   /* defines shape of container */
   /* text-align: center; */
   position: relative;
@@ -82,6 +82,7 @@
   font-style: italic;
   display: inline;
   font-size: 5vh;
+
 }
 
 /* season info */
@@ -102,17 +103,19 @@
 
   padding-top: 1vh;
   padding-left: 1vw;
+
 }
 
 #Ceason {
   font-style: italic;
   font-size: 3vh;
+
 }
 
 
 /* BEGIN INFO GRID */
 .infoGrid{
-  color: black;
+
   display: flex;
   flex-direction: row;
 
