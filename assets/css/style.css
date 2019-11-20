@@ -19,6 +19,7 @@
 @font-face {
   font-family: nakadai;
   src: url('../fonts/nakadai.otf');
+  color: black;
 
 }
 
@@ -44,6 +45,7 @@
 /* sol info */
 
 .sol{
+  color: black;
   /* defines shape of container */
   /* text-align: center; */
   position: relative;
@@ -58,7 +60,7 @@
 
   font-family: nakadai;
   font-weight: bold;
-  color: black;
+
   /* text-shadow: 0.5px 0.5px 4px white; */
   animation: glowing 3s infinite alternate linear;
 /*
@@ -110,6 +112,7 @@
 
 /* BEGIN INFO GRID */
 .infoGrid{
+  color: black;
   display: flex;
   flex-direction: row;
 
@@ -121,7 +124,7 @@
   height: 30vh;
 
   /* text colour */
-  color: black;
+
 
   }
 
