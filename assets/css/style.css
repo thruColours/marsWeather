@@ -19,15 +19,16 @@
 @font-face {
   font-family: nakadai;
   src: url('../fonts/nakadai.otf');
+
 }
 
-@font-face {
+/* @font-face {
     font-family: 'nakadaiitalic';
     src: url(assets/fonts/nakadai_italic-webfont.woff2) format('woff2'),
-         url(assets/fonts/nakadai_italic-webfont.woff) format('woff');
+         url(assets/fonts/nakadai_italic-webfont.woff) format('woff'); */
     /* font-weight: normal;
     font-style: normal; */
-}
+/* } */
 
 @keyframes glowing {
   0% { text-shadow: 0.5px 0.5px 4px white;
@@ -57,12 +58,14 @@
 
   font-family: nakadai;
   font-weight: bold;
+  color: black;
   /* text-shadow: 0.5px 0.5px 4px white; */
   animation: glowing 3s infinite alternate linear;
 /*
   border-style: solid; */
   height: 8vh;
   width: 100vw;
+
 }
 
 #solTitle{
@@ -83,6 +86,7 @@
 
 .seeson{
   font-family: nakadai;
+
 
   /* src: url(assets/fonts/nakadai.otf) format("opentype"); */
   font-size: 1.5vh;
@@ -113,12 +117,11 @@
   padding-top: 1vh;
   padding-bottom: 5vh;
 
-
-
-
-
   width: 100vw;
   height: 30vh;
+  color: black;
+  /* text colour */
+
   }
 
   /* NEED TO NEST FLEX BOXES FOR ALL WEATHER ITEMS */
@@ -148,8 +151,6 @@
 
   /* overflow: hidden; */
   /* margin: 0vw; */
-
-
 
 
 
